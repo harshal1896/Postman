@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "5d9917fd-0bfe-4ed5-9475-4f247033960f",
+		"name": "Zoom Connect",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "27488446-5d9917fd-0bfe-4ed5-9475-4f247033960f"
+	},
+	"item": [
+		{
+			"name": "Get Balance",
+			"id": "1ea72180-6250-4258-8c6b-d19f1836e073",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://httpbin.com/?anything=test",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"com"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "anything",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get stat",
+			"id": "7b0a9cf6-92e6-46d6-b0ab-14f7e0848049",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer",
+			"id": "cc91494a-15ee-4587-a342-4aadfc2dd570",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"numberOfCreditsToTransfer\": 0,\r\n  \"transferFromEmailAddress\": \"\",\r\n  \"transferToEmailAddress\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.zoomconnect.com/app/api/rest/v1/account/transfer",
+					"protocol": "https",
+					"host": [
+						"www",
+						"zoomconnect",
+						"com"
+					],
+					"path": [
+						"app",
+						"api",
+						"rest",
+						"v1",
+						"account",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a3279ca6-6e60-49fd-b94d-5226e3a35a7c",
+						"exec": [
+							"pm.test(\"Status code is 405 \", function () {\r",
+							"    pm.response.to.have.status(405 );\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "f80951b7-a359-4386-9e6a-7e0905d052c7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"company\": \"\",\r\n  \"contactNumber\": \"\",\r\n  \"creditBalance\": 0,\r\n  \"emailAddress\": \"\",\r\n  \"firstName\": \"\",\r\n  \"lastName\": \"\",\r\n  \"password\": \"\",\r\n  \"userId\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.zoomconnect.com/app/api/rest/v1/account/user",
+					"protocol": "https",
+					"host": [
+						"www",
+						"zoomconnect",
+						"com"
+					],
+					"path": [
+						"app",
+						"api",
+						"rest",
+						"v1",
+						"account",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
